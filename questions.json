@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "day": 1,
+    "question": "JavaScript'te 'let' ve 'var' arasındaki fark nedir?",
+    "options": [
+      "Hiçbir fark yok",
+      "let block scoped, var function scoped",
+      "var daha modern",
+      "let sadece string için"
+    ],
+    "correct": 1,
+    "explanation": "'let' block scoped iken 'var' function scoped'tur."
+  },
+  {
+    "id": 2,
+    "day": 2,
+    "question": "React'te state nasıl güncellenir?",
+    "options": [
+      "this.state = value",
+      "this.setState()",
+      "setState()",
+      "updateState()"
+    ],
+    "correct": 2,
+    "explanation": "State güncellemek için setState() kullanılır."
+  }
+]
