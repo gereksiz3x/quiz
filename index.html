@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Günün Sorusu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-calendar-day"></i> Günün Sorusu</h1>
+            <div class="day-counter">Gün: <span id="currentDay">1</span></div>
+        </header>
+        
+        <main>
+            <div class="quiz-card">
+                <div class="question-header">
+                    <span class="question-number">Soru #<span id="questionId">1</span></span>
+                    <span class="attempts">Kalan Deneme: <span id="attemptsLeft">2</span></span>
+                </div>
+                
+                <h2 id="questionText">Soru yükleniyor...</h2>
+                
+                <div class="options" id="optionsContainer">
+                    <!-- Seçenekler buraya eklenecek -->
+                </div>
+                
+                <div class="feedback" id="feedback">
+                    <!-- Feedback mesajları burada görünecek -->
+                </div>
+                
+                <div class="explanation" id="explanation">
+                    <!-- Açıklama burada görünecek -->
+                </div>
+                
+                <div class="controls">
+                    <button id="nextBtn" class="btn-next" disabled>
+                        <i class="fas fa-forward"></i> Sonraki Soru (Yarın)
+                    </button>
+                </div>
+            </div>
+            
+            <div class="progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text">İlerleme: <span id="progressText">0/30</span></div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Her gün yeni bir soru otomatik olarak açılacaktır.</p>
+        </footer>
+    </div>
+    
+    <!-- Animasyon için -->
+    <div id="celebration"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
