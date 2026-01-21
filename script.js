@@ -1,247 +1,102 @@
-class QuizApp {
-    constructor() {
-        this.questions = [];
-        this.currentDay = 1;
-        this.attemptsLeft = 2;
-        this.userAnswers = {};
-        this.loadProgress();
-        this.init();
-    }
+// PDF'ten kopyaladığınız tüm soruları bu şekilde düzenleyebilirsiniz
+// İşte ilk 10 günlük örnek:
 
-    async init() {
-        await this.loadQuestions();
-        this.setupEventListeners();
-        this.showQuestionForDay();
-    }
+const allQuestionsFromPDF = [
+  // Gün 1: Soru 1-5 (PDF sayfa 1)
+  {
+    day: 1,
+    questions: [
+      {
+        id: 1,
+        question: "In the end, Maria --- the operation on her leg as the orthopaedic surgeon said that the problem could be treated with physiotherapy.",
+        options: ["mustn't have", "didn't need to have", "shouldn't have had", "needn't have", "had better not have"],
+        correct: 2,
+        explanation: "'needn't have + past participle' geçmişte gerekli olmayan bir eylemi ifade eder."
+      },
+      {
+        id: 2,
+        question: "Disasters on the earth --- dangerous, but most probably the biggest threat to humans --- space.",
+        options: ["should seem / had come from", "might have seemed / must come from", "may seem / will come from", "are to seem / needn't come from", "don't need to seem / can't come from"],
+        correct: 2,
+        explanation: "'may seem' olasılık, 'will come from' gelecek tahmini ifade eder."
+      },
+      {
+        id: 3,
+        question: "There is no point in phoning Maggie at the office because she --- already.",
+        options: ["should leave", "might leave", "must have left", "had better leave", "could leave"],
+        correct: 2,
+        explanation: "'must have + past participle' geçmişte olmuş olması muhtemel bir eylemi ifade eder."
+      },
+      {
+        id: 4,
+        question: "School days --- the best days of your life and usually part of that experience can involve some strenuous physical activity.",
+        options: ["didn't need to be", "can't have been", "would have been", "would prefer to have been", "are supposed to be"],
+        correct: 4,
+        explanation: "'are supposed to be' genel kabul gören bir inanışı ifade eder."
+      },
+      {
+        id: 5,
+        question: "You --- so much food as there was plenty of food left over from the party and most of it was untouched so we could have eaten that.",
+        options: ["mustn't cook", "had better not cook", "would rather have not cooked", "may not have cooked", "needn't have cooked"],
+        correct: 4,
+        explanation: "'needn't have + past participle' geçmişte gerekli olmayan bir eylemi ifade eder."
+      }
+    ]
+  },
+  // Gün 2: Soru 6-10 (PDF sayfa 1-2)
+  {
+    day: 2,
+    questions: [
+      {
+        id: 6,
+        question: "I --- up to my office on the tenth floor because the lift had stopped working.",
+        options: ["may have to walk", "must be walking", "should have been walking", "had to walk", "might walk"],
+        correct: 3,
+        explanation: "'had to' geçmişte zorunluluk ifade eder."
+      },
+      {
+        id: 7,
+        question: "You --- your present job until you find another one.",
+        options: ["didn't have to quit", "wouldn't have quitted", "had better not quit", "needn't have quitted", "weren't used to quitting"],
+        correct: 2,
+        explanation: "'had better not' tavsiye/uyarı ifade eder."
+      },
+      {
+        id: 8,
+        question: "When a baby has reached his first birthday, he --- or even stand up without the help of an adult.",
+        options: ["had to sit", "must sit", "might sit", "should be able to sit up", "was able to sit"],
+        correct: 3,
+        explanation: "'should be able to' yetenek/beklenti ifade eder."
+      },
+      {
+        id: 9,
+        question: "Some teachers argue that students who - a calculator - how to do mental calculations.",
+        options: ["could use / had to forget", "are used to using / may forget", "might have used / would have forgotten", "must use / used to forget", "can use / mustn't forget"],
+        correct: 1,
+        explanation: "'are used to using' alışkanlık, 'may forget' olasılık ifade eder."
+      },
+      {
+        id: 10,
+        question: "When the weather becomes colder, we - that the air mass - in the Arctic rather than over the Gulf of Mexico.",
+        options: ["know / must have originated", "knew / may have originated", "had known / should have originated", "have known / had to originate", "were knowing / must originate"],
+        correct: 1,
+        explanation: "'must have + past participle' geçmişte kesin olması muhtemel bir durumu ifade eder."
+      }
+    ]
+  }
+  // ... diğer 22 gün bu şekilde devam eder
+];
 
-    async loadQuestions() {
-        try {
-            const response = await fetch('data/questions.json');
-            this.questions = await response.json();
-        } catch (error) {
-            console.error('Sorular yüklenemedi:', error);
-        }
-    }
-
-    loadProgress() {
-        const saved = localStorage.getItem('quizProgress');
-        if (saved) {
-            const progress = JSON.parse(saved);
-            this.currentDay = progress.currentDay || 1;
-            this.userAnswers = progress.userAnswers || {};
-        }
-        
-        // Otomatik gün güncelleme (bugünün tarihine göre)
-        const startDate = localStorage.getItem('quizStartDate');
-        if (!startDate) {
-            localStorage.setItem('quizStartDate', new Date().toISOString());
-        } else {
-            const start = new Date(startDate);
-            const today = new Date();
-            const diffTime = Math.abs(today - start);
-            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1;
-            this.currentDay = Math.min(diffDays, this.questions.length);
-        }
-    }
-
-    saveProgress() {
-        const progress = {
-            currentDay: this.currentDay,
-            userAnswers: this.userAnswers
-        };
-        localStorage.setItem('quizProgress', JSON.stringify(progress));
-    }
-
-    showQuestionForDay() {
-        const question = this.questions.find(q => q.day === this.currentDay);
-        if (!question) {
-            document.getElementById('questionText').textContent = 'Bugün için soru bulunamadı.';
-            return;
-        }
-
-        document.getElementById('currentDay').textContent = this.currentDay;
-        document.getElementById('questionId').textContent = question.id;
-        document.getElementById('questionText').textContent = question.question;
-        
-        this.displayOptions(question);
-        this.updateProgress();
-        this.resetAttempts();
-        
-        // Eğer daha önce cevaplandıysa
-        if (this.userAnswers[question.id]) {
-            this.disableQuiz();
-            this.showExplanation(question);
-        }
-    }
-
-    displayOptions(question) {
-        const container = document.getElementById('optionsContainer');
-        container.innerHTML = '';
-        
-        question.options.forEach((option, index) => {
-            const div = document.createElement('div');
-            div.className = 'option';
-            div.textContent = `${String.fromCharCode(65 + index)}) ${option}`;
-            div.dataset.index = index;
-            div.onclick = () => this.selectOption(index, question);
-            container.appendChild(div);
-        });
-    }
-
-    selectOption(selectedIndex, question) {
-        if (this.attemptsLeft <= 0 || this.userAnswers[question.id]) return;
-        
-        const options = document.querySelectorAll('.option');
-        options.forEach(opt => opt.classList.remove('selected'));
-        options[selectedIndex].classList.add('selected');
-        
-        this.checkAnswer(selectedIndex, question);
-    }
-
-    checkAnswer(selectedIndex, question) {
-        const isCorrect = selectedIndex === question.correct;
-        
-        if (isCorrect) {
-            this.showCorrectFeedback();
-            this.userAnswers[question.id] = { 
-                correct: true, 
-                answer: selectedIndex 
-            };
-            this.saveProgress();
-            this.showExplanation(question);
-            this.disableQuiz();
-        } else {
-            this.attemptsLeft--;
-            document.getElementById('attemptsLeft').textContent = this.attemptsLeft;
-            
-            if (this.attemptsLeft > 0) {
-                this.showWrongFeedback('Bir deneme hakkınız kaldı!');
-            } else {
-                this.showWrongFeedback('Doğru cevap gösteriliyor...');
-                this.revealCorrectAnswer(question);
-                this.userAnswers[question.id] = { 
-                    correct: false, 
-                    answer: selectedIndex 
-                };
-                this.saveProgress();
-                this.showExplanation(question);
-                this.disableQuiz();
-            }
-        }
-    }
-
-    showCorrectFeedback() {
-        const feedback = document.getElementById('feedback');
-        feedback.innerHTML = `
-            <div style="display:flex; align-items:center; gap:10px;">
-                <i class="fas fa-check-circle" style="font-size:24px;"></i>
-                <span><strong>Doğru!</strong> Tebrikler! 🎉</span>
-            </div>
-        `;
-        feedback.className = 'feedback correct celebrate';
-        
-        this.createCelebration();
-    }
-
-    showWrongFeedback(message) {
-        const feedback = document.getElementById('feedback');
-        feedback.innerHTML = `
-            <div style="display:flex; align-items:center; gap:10px;">
-                <i class="fas fa-times-circle" style="font-size:24px;"></i>
-                <span><strong>Yanlış!</strong> ${message}</span>
-            </div>
-        `;
-        feedback.className = 'feedback wrong';
-    }
-
-    revealCorrectAnswer(question) {
-        const options = document.querySelectorAll('.option');
-        options.forEach((opt, index) => {
-            if (index === question.correct) {
-                opt.classList.add('correct');
-            } else if (opt.classList.contains('selected')) {
-                opt.classList.add('wrong');
-            }
-        });
-    }
-
-    showExplanation(question) {
-        const explanation = document.getElementById('explanation');
-        explanation.innerHTML = `
-            <h3><i class="fas fa-lightbulb"></i> Açıklama</h3>
-            <p>${question.explanation}</p>
-        `;
-        explanation.style.display = 'block';
-        
-        // Sonraki soru butonunu aktif et
-        if (this.currentDay < this.questions.length) {
-            document.getElementById('nextBtn').disabled = false;
-        }
-    }
-
-    disableQuiz() {
-        const options = document.querySelectorAll('.option');
-        options.forEach(opt => {
-            opt.style.pointerEvents = 'none';
-        });
-    }
-
-    createCelebration() {
-        const celebration = document.getElementById('celebration');
-        celebration.style.display = 'block';
-        celebration.innerHTML = '';
-        
-        for (let i = 0; i < 50; i++) {
-            const confetti = document.createElement('div');
-            confetti.className = 'confetti';
-            confetti.style.left = `${Math.random() * 100}%`;
-            confetti.style.top = `${Math.random() * 100}%`;
-            confetti.style.backgroundColor = this.getRandomColor();
-            confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
-            celebration.appendChild(confetti);
-        }
-        
-        setTimeout(() => {
-            celebration.style.display = 'none';
-        }, 2000);
-    }
-
-    getRandomColor() {
-        const colors = ['#FF5252', '#FF4081', '#E040FB', '#7C4DFF', 
-                       '#536DFE', '#448AFF', '#40C4FF', '#18FFFF',
-                       '#64FFDA', '#69F0AE', '#B2FF59', '#EEFF41'];
-        return colors[Math.floor(Math.random() * colors.length)];
-    }
-
-    resetAttempts() {
-        this.attemptsLeft = 2;
-        document.getElementById('attemptsLeft').textContent = this.attemptsLeft;
-        document.getElementById('feedback').style.display = 'none';
-        document.getElementById('explanation').style.display = 'none';
-        document.getElementById('nextBtn').disabled = true;
-    }
-
-    updateProgress() {
-        const total = this.questions.length;
-        const answered = Object.keys(this.userAnswers).length;
-        const percentage = (answered / total) * 100;
-        
-        document.getElementById('progressFill').style.width = `${percentage}%`;
-        document.getElementById('progressText').textContent = `${answered}/${total}`;
-    }
-
-    setupEventListeners() {
-        document.getElementById('nextBtn').addEventListener('click', () => {
-            if (this.currentDay < this.questions.length) {
-                this.currentDay++;
-                this.saveProgress();
-                this.showQuestionForDay();
-            }
-        });
-    }
+// Tarih hesaplama fonksiyonu
+function generateDates(startDate = "2024-01-15") {
+  const start = new Date(startDate);
+  const dates = [];
+  
+  for (let i = 0; i < 24; i++) {
+    const currentDate = new Date(start);
+    currentDate.setDate(start.getDate() + i);
+    dates.push(currentDate.toISOString().split('T')[0]);
+  }
+  
+  return dates;
 }
-
-// Uygulamayı başlat
-document.addEventListener('DOMContentLoaded', () => {
-    new QuizApp();
-});
