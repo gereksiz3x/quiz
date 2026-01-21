@@ -2,7 +2,6 @@
   "days": [
     {
       "day": 1,
-      "date": "2024-01-15",
       "questions": [
         {
           "id": 1,
@@ -14,7 +13,7 @@
             "needn't have",
             "had better not have"
           ],
-          "correct": 2,
+          "correct": 3,
           "explanation": "'needn't have + past participle' geçmişte gerekli olmayan bir eylemi ifade eder. Maria'nın ameliyat olması gerekmiyordu çünkü problem fizik tedavi ile çözülebilirdi."
         },
         {
@@ -73,7 +72,6 @@
     },
     {
       "day": 2,
-      "date": "2024-01-16",
       "questions": [
         {
           "id": 6,
@@ -137,13 +135,220 @@
             "have known / had to originate",
             "were knowing / must originate"
           ],
-          "correct": 1,
+          "correct": 0,
           "explanation": "'must have + past participle' geçmişte kesin olması muhtemel bir durumu ifade eder. Hava soğuduğunda, hava kütlesinin Arktik'ten geldiğini biliriz."
         }
       ]
+    },
+    {
+      "day": 3,
+      "questions": [
+        {
+          "id": 11,
+          "question": "To assure the safety of those workers who - radioactive material, the employer - them enter contaminated areas without protective clothing.",
+          "options": [
+            "may handle / needn't let",
+            "can handle / doesn't have to let",
+            "must handle / shouldn't let",
+            "used to handle / mustn't let",
+            "could handle / can't let"
+          ],
+          "correct": 2,
+          "explanation": "'must handle' zorunluluk, 'shouldn't let' tavsiye/engelleme ifade eder. Radyoaktif madde ile çalışan işçilerin koruyucu kıyafet olmadan girmesine izin verilmemelidir."
+        },
+        {
+          "id": 12,
+          "question": "Before the invention of the musical staff, people - musical composition on to each other not by writing them but by remembering them.",
+          "options": [
+            "might pass",
+            "may have to pass",
+            "can be passing",
+            "should pass",
+            "would pass"
+          ],
+          "correct": 4,
+          "explanation": "'would' geçmişte alışkanlık ifade eder. Müzik notası bulunmadan önce insanlar müzik eserlerini hatırlayarak birbirlerine aktarırlardı."
+        },
+        {
+          "id": 13,
+          "question": "Albert Einstein was such a brilliant scientist that many of his colleagues - for several years in order to from opinions about his theories.",
+          "options": [
+            "had to study",
+            "must study",
+            "didn't need to study",
+            "would rather study",
+            "can't have studied"
+          ],
+          "correct": 0,
+          "explanation": "'had to' geçmişte zorunluluk ifade eder. Einstein o kadar zekiydi ki meslektaşları teorilerini anlamak için yıllarca çalışmak zorunda kaldı."
+        },
+        {
+          "id": 14,
+          "question": "The American Buffalo - itself again because it has been removed from the endangered species list.",
+          "options": [
+            "used to reproduce",
+            "must be reproducing",
+            "couldn't reproduce",
+            "had to reproduce",
+            "would reproduce"
+          ],
+          "correct": 1,
+          "explanation": "'must be' şu an kesin olan bir durumu ifade eder. Amerikan Bizonu yeniden ürüyor olmalı çünkü nesli tükenmekte olan türler listesinden çıkarıldı."
+        },
+        {
+          "id": 15,
+          "question": "Our guests didn't turn up so we - all that extra food after all.",
+          "options": [
+            "may not have bought",
+            "can't have bought",
+            "shouldn't but",
+            "needn't have bought",
+            "had better not buy"
+          ],
+          "correct": 3,
+          "explanation": "'needn't have + past participle' geçmişte gerekli olmayan bir eylemi ifade eder. Misafirler gelmeyince o kadar fazla yemek almamıza gerek yoktu."
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "questions": [
+        {
+          "id": 16,
+          "question": "In today's competitive markets, even small businesses - on TV and radio in order to gain a share of the market.",
+          "options": [
+            "used to advertise",
+            "would have advertised",
+            "are able to advertise",
+            "don't need to advertise",
+            "ought to advertise"
+          ],
+          "correct": 4,
+          "explanation": "'ought to' tavsiye/zorunluluk ifade eder. Rekabetçi pazarlarda küçük işletmeler bile reklam yapmalıdır."
+        },
+        {
+          "id": 17,
+          "question": "By taking the right medication and making the right lifestyle choices, there is no reason why most asthma sufferers - perfectly healthy and active lives.",
+          "options": [
+            "couldn't lead",
+            "mustn't lead",
+            "weren't able to lead",
+            "may not lead",
+            "shouldn't be able to lead"
+          ],
+          "correct": 0,
+          "explanation": "'couldn't' yetenek ifade eder. Doğru ilaç ve yaşam tarzı ile astım hastaları sağlıklı yaşayabilirler."
+        },
+        {
+          "id": 18,
+          "question": "If you want to lose weight, you - to avoid all sweets because that - better than going on a diet.",
+          "options": [
+            "may have tried / could be",
+            "would have tried / must be",
+            "should try / might be",
+            "would try / needs to be",
+            "must have tried / can't be"
+          ],
+          "correct": 2,
+          "explanation": "'should try' tavsiye, 'might be' olasılık ifade eder. Kilo vermek için tatlılardan kaçınmayı denemelisin, bu diyet yapmaktan daha iyi olabilir."
+        },
+        {
+          "id": 19,
+          "question": "If you want to get a better feeling for how the city is laid out, you --- downtown and explore the waterfront.",
+          "options": [
+            "had to walk",
+            "may have walked",
+            "used to walk",
+            "should walk",
+            "would be walking"
+          ],
+          "correct": 3,
+          "explanation": "'should' tavsiye ifade eder. Şehrin yapısını daha iyi anlamak için şehir merkezinde yürümelisin."
+        },
+        {
+          "id": 20,
+          "question": "Hiking the trail to the peak --- dangerous if you are not well prepared for dramatic weather changes so you --- the route a little more before you attempt the ascent.",
+          "options": [
+            "can be/had better research",
+            "could have been/had to research",
+            "must be/needn't have researched",
+            "was to be/had to research",
+            "used to be/should research"
+          ],
+          "correct": 0,
+          "explanation": "'can be' olasılık, 'had better' tavsiye/uyarı ifade eder. Zirveye tırmanmak tehlikeli olabilir, bu yüzden rotayı daha iyi araştırmalısın."
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "questions": [
+        {
+          "id": 21,
+          "question": "When you have a small child in the house, you --- small objects lying around because such objects --- be swallowed, causing serious injury or even death.",
+          "options": [
+            "needn't leave/could",
+            "had better not leave/might have",
+            "don't have to leave/may",
+            "mustn't leave/can",
+            "shouldn't have left/would"
+          ],
+          "correct": 3,
+          "explanation": "'mustn't leave' yasaklama, 'can' olasılık ifade eder. Evde küçük çocuk varsa küçük nesneleri etrafta bırakmamalısın çünkü yutulabilirler."
+        },
+        {
+          "id": 22,
+          "question": "Nina said she --- over right after work so she --- here by 6 o'clock at the latest.",
+          "options": [
+            "may come/must be",
+            "would come/should be",
+            "can come/ought to be",
+            "might come/had had to be",
+            "is able to come/will be"
+          ],
+          "correct": 1,
+          "explanation": "'would come' gelecek niyet, 'should be' olasılık ifade eder. Nina işten sonra geleceğini söyledi, bu yüzden en geç 6'da burada olmalı."
+        },
+        {
+          "id": 23,
+          "question": "The person that the eyewitnesses accuse --- this crime as he wasn't even in the city that night.",
+          "options": [
+            "may have committed",
+            "was to have committed",
+            "needn't have committed",
+            "shouldn't commit",
+            "can't have committed"
+          ],
+          "correct": 4,
+          "explanation": "'can't have + past participle' geçmişte imkansız olan bir durumu ifade eder. O kişi o gece şehirde olmadığı için bu suçu işlemiş olamaz."
+        },
+        {
+          "id": 24,
+          "question": "Gloria has won every game she has played today so she --- a lot.",
+          "options": [
+            "might practise",
+            "must have practised",
+            "has to practise",
+            "should practise",
+            "is able to practise"
+          ],
+          "correct": 1,
+          "explanation": "'must have + past participle' geçmişte kesin olması muhtemel bir durumu ifade eder. Gloria bugün tüm maçları kazandığına göre çok antrenman yapmış olmalı."
+        },
+        {
+          "id": 25,
+          "question": "Everything on my desk and in my drawers was in a mess; someone --- for the confidential list of prize winners but I am not sure.",
+          "options": [
+            "must have searched",
+            "may search",
+            "might have searched",
+            "could search",
+            "has had to search"
+          ],
+          "correct": 2,
+          "explanation": "'might have + past participle' geçmişte olası bir durumu ifade eder. Masam dağınık, birisi ödül listesini aramış olabilir ama emin değilim."
+        }
+      ]
     }
-  ],
-  "totalDays": 24,
-  "questionsPerDay": 5,
-  "totalQuestions": 120
+  ]
 }
