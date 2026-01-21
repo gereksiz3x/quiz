@@ -1,28 +1,149 @@
-[
-  {
-    "id": 1,
-    "day": 1,
-    "question": "JavaScript'te 'let' ve 'var' arasındaki fark nedir?",
-    "options": [
-      "Hiçbir fark yok",
-      "let block scoped, var function scoped",
-      "var daha modern",
-      "let sadece string için"
-    ],
-    "correct": 1,
-    "explanation": "'let' block scoped iken 'var' function scoped'tur."
-  },
-  {
-    "id": 2,
-    "day": 2,
-    "question": "React'te state nasıl güncellenir?",
-    "options": [
-      "this.state = value",
-      "this.setState()",
-      "setState()",
-      "updateState()"
-    ],
-    "correct": 2,
-    "explanation": "State güncellemek için setState() kullanılır."
-  }
-]
+{
+  "days": [
+    {
+      "day": 1,
+      "date": "2024-01-15",
+      "questions": [
+        {
+          "id": 1,
+          "question": "In the end, Maria --- the operation on her leg as the orthopaedic surgeon said that the problem could be treated with physiotherapy.",
+          "options": [
+            "mustn't have",
+            "didn't need to have",
+            "shouldn't have had",
+            "needn't have",
+            "had better not have"
+          ],
+          "correct": 2,
+          "explanation": "'needn't have + past participle' geçmişte gerekli olmayan bir eylemi ifade eder. Maria'nın ameliyat olması gerekmiyordu çünkü problem fizik tedavi ile çözülebilirdi."
+        },
+        {
+          "id": 2,
+          "question": "Disasters on the earth --- dangerous, but most probably the biggest threat to humans --- space.",
+          "options": [
+            "should seem / had come from",
+            "might have seemed / must come from",
+            "may seem / will come from",
+            "are to seem / needn't come from",
+            "don't need to seem / can't come from"
+          ],
+          "correct": 2,
+          "explanation": "'may seem' olasılık, 'will come from' gelecek tahmini ifade eder. Dünyadaki felaketler tehlikeli görünebilir ama en büyük tehdit uzaydan gelecek."
+        },
+        {
+          "id": 3,
+          "question": "There is no point in phoning Maggie at the office because she --- already.",
+          "options": [
+            "should leave",
+            "might leave",
+            "must have left",
+            "had better leave",
+            "could leave"
+          ],
+          "correct": 2,
+          "explanation": "'must have + past participle' geçmişte olmuş olması muhtemel bir eylemi ifade eder. Maggie muhtemelen ofisten ayrılmıştır."
+        },
+        {
+          "id": 4,
+          "question": "School days --- the best days of your life and usually part of that experience can involve some strenuous physical activity.",
+          "options": [
+            "didn't need to be",
+            "can't have been",
+            "would have been",
+            "would prefer to have been",
+            "are supposed to be"
+          ],
+          "correct": 4,
+          "explanation": "'are supposed to be' genel kabul gören bir inanışı ifade eder. Okul günlerinin hayatın en güzel günleri olduğu düşünülür."
+        },
+        {
+          "id": 5,
+          "question": "You --- so much food as there was plenty of food left over from the party and most of it was untouched so we could have eaten that.",
+          "options": [
+            "mustn't cook",
+            "had better not cook",
+            "would rather have not cooked",
+            "may not have cooked",
+            "needn't have cooked"
+          ],
+          "correct": 4,
+          "explanation": "'needn't have + past participle' geçmişte gerekli olmayan bir eylemi ifade eder. Partiden kalan yemekler varken yemek pişirmene gerek yoktu."
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "date": "2024-01-16",
+      "questions": [
+        {
+          "id": 6,
+          "question": "I --- up to my office on the tenth floor because the lift had stopped working.",
+          "options": [
+            "may have to walk",
+            "must be walking",
+            "should have been walking",
+            "had to walk",
+            "might walk"
+          ],
+          "correct": 3,
+          "explanation": "'had to' geçmişte zorunluluk ifade eder. Asansör bozulduğu için 10. kata yürümek zorunda kaldım."
+        },
+        {
+          "id": 7,
+          "question": "You --- your present job until you find another one.",
+          "options": [
+            "didn't have to quit",
+            "wouldn't have quitted",
+            "had better not quit",
+            "needn't have quitted",
+            "weren't used to quitting"
+          ],
+          "correct": 2,
+          "explanation": "'had better not' tavsiye/uyarı ifade eder. Başka iş bulana kadar şimdiki işini bırakmaman daha iyi olur."
+        },
+        {
+          "id": 8,
+          "question": "When a baby has reached his first birthday, he --- or even stand up without the help of an adult.",
+          "options": [
+            "had to sit",
+            "must sit",
+            "might sit",
+            "should be able to sit up",
+            "was able to sit"
+          ],
+          "correct": 3,
+          "explanation": "'should be able to' yetenek/beklenti ifade eder. Bir bebek bir yaşına geldiğinde oturabilmeli hatta ayakta durabilmelidir."
+        },
+        {
+          "id": 9,
+          "question": "Some teachers argue that students who - a calculator - how to do mental calculations.",
+          "options": [
+            "could use / had to forget",
+            "are used to using / may forget",
+            "might have used / would have forgotten",
+            "must use / used to forget",
+            "can use / mustn't forget"
+          ],
+          "correct": 1,
+          "explanation": "'are used to using' alışkanlık, 'may forget' olasılık ifade eder. Hesap makinesi kullanmaya alışan öğrenciler zihinden hesap yapmayı unutabilirler."
+        },
+        {
+          "id": 10,
+          "question": "When the weather becomes colder, we - that the air mass - in the Arctic rather than over the Gulf of Mexico.",
+          "options": [
+            "know / must have originated",
+            "knew / may have originated",
+            "had known / should have originated",
+            "have known / had to originate",
+            "were knowing / must originate"
+          ],
+          "correct": 1,
+          "explanation": "'must have + past participle' geçmişte kesin olması muhtemel bir durumu ifade eder. Hava soğuduğunda, hava kütlesinin Arktik'ten geldiğini biliriz."
+        }
+      ]
+    }
+  ],
+  "totalDays": 24,
+  "questionsPerDay": 5,
+  "totalQuestions": 120
+}
