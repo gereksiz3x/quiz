@@ -3,89 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Günlük 5 Soru - Modal Verbs</title>
+    <title>Günlük 5 Modal Verbs Sorusu</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1><i class="fas fa-calendar-alt"></i> Günlük 5 Soru - Modal Verbs</h1>
+            <h1><i class="fas fa-book"></i> Modal Verbs Practice</h1>
             <div class="day-info">
-                <span class="day-counter">Gün: <span id="currentDay">1</span></span>
-                <span class="question-counter">Soru: <span id="currentQuestion">1/5</span></span>
+                <div class="day-counter">Gün: <span id="currentDay">1</span>/5</div>
+                <div class="question-counter">Soru: <span id="currentQuestion">1</span>/5</div>
             </div>
         </header>
         
         <main>
             <div class="quiz-card">
                 <div class="question-header">
-                    <span class="question-number">Gün #<span id="dayNumber">1</span> - Soru #<span id="questionId">1</span></span>
-                    <span class="attempts">Kalan Deneme: <span id="attemptsLeft">2</span></span>
+                    <div class="question-number">Soru <span id="questionNumber">1</span></div>
+                    <div class="attempts">Deneme Hakkı: <span id="attemptsLeft">2</span></div>
                 </div>
                 
-                <h2 id="questionText">Soru yükleniyor...</h2>
+                <div class="question-box">
+                    <h2 id="questionText">Soru yükleniyor...</h2>
+                </div>
                 
                 <div class="options" id="optionsContainer">
-                    <!-- Seçenekler buraya eklenecek -->
+                    <!-- Seçenekler buraya gelecek -->
                 </div>
                 
                 <div class="feedback" id="feedback">
-                    <!-- Feedback mesajları -->
+                    <!-- Geri bildirim buraya gelecek -->
                 </div>
                 
                 <div class="explanation" id="explanation">
-                    <!-- Açıklama -->
+                    <!-- Açıklama buraya gelecek -->
                 </div>
                 
                 <div class="controls">
-                    <button id="prevBtn" class="btn-nav" disabled>
-                        <i class="fas fa-backward"></i> Önceki
+                    <button id="prevBtn" class="btn">
+                        <i class="fas fa-arrow-left"></i> Önceki
                     </button>
-                    <button id="nextBtn" class="btn-nav">
-                        <i class="fas fa-forward"></i> Sonraki
-                    </button>
-                    <button id="nextDayBtn" class="btn-next" disabled>
-                        <i class="fas fa-calendar-day"></i> Sonraki Gün
+                    <button id="nextBtn" class="btn btn-primary">
+                        Sonraki <i class="fas fa-arrow-right"></i>
                     </button>
                 </div>
             </div>
             
-            <div class="daily-progress">
-                <h3><i class="fas fa-chart-bar"></i> Günlük İlerleme</h3>
-                <div class="progress-container">
-                    <div class="progress-item" data-question="1">1</div>
-                    <div class="progress-item" data-question="2">2</div>
-                    <div class="progress-item" data-question="3">3</div>
-                    <div class="progress-item" data-question="4">4</div>
-                    <div class="progress-item" data-question="5">5</div>
+            <div class="progress-section">
+                <h3><i class="fas fa-chart-line"></i> Bugünkü İlerleme</h3>
+                <div class="progress-dots">
+                    <div class="dot active" data-index="0">1</div>
+                    <div class="dot" data-index="1">2</div>
+                    <div class="dot" data-index="2">3</div>
+                    <div class="dot" data-index="3">4</div>
+                    <div class="dot" data-index="4">5</div>
                 </div>
             </div>
             
             <div class="stats">
-                <div class="stat-card">
-                    <i class="fas fa-check-circle"></i>
-                    <span>Doğru: <span id="correctCount">0</span></span>
+                <div class="stat">
+                    <i class="fas fa-check" style="color: #4CAF50;"></i>
+                    <span>Doğru: <strong id="correctCount">0</strong></span>
                 </div>
-                <div class="stat-card">
-                    <i class="fas fa-times-circle"></i>
-                    <span>Yanlış: <span id="wrongCount">0</span></span>
+                <div class="stat">
+                    <i class="fas fa-times" style="color: #f44336;"></i>
+                    <span>Yanlış: <strong id="wrongCount">0</strong></span>
                 </div>
-                <div class="stat-card">
-                    <i class="fas fa-star"></i>
-                    <span>Başarı: <span id="successRate">0%</span></span>
+                <div class="stat">
+                    <i class="fas fa-trophy" style="color: #FF9800;"></i>
+                    <span>Başarı: <strong id="successRate">0%</strong></span>
                 </div>
             </div>
         </main>
         
         <footer>
-            <p>24 günlük Modal Verbs Challenge - Her gün 5 yeni soru</p>
+            <p>Her gün 5 yeni modal verbs sorusu | Toplam 25 soru</p>
         </footer>
     </div>
-    
-    <!-- Animasyon için -->
-    <div id="celebration"></div>
-    
+
     <script src="script.js"></script>
 </body>
 </html>
